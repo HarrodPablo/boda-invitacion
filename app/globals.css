@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  /* Compensa el nav fijo al saltar a una ancla */
+  scroll-padding-top: 4rem;
+}
+
+body {
+  background-color: #fafafa;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Evita scroll horizontal en mobile pase lo que pase */
+html,
+body {
+  overflow-x: hidden;
+}
+
+@layer components {
+  /* Banda de franjas verticales (componentes #5 y #11) */
+  .franjas {
+    background-image: repeating-linear-gradient(
+      to right,
+      #d9d0c1 0,
+      #d9d0c1 var(--franja-w, 28px),
+      #fafafa var(--franja-w, 28px),
+      #fafafa calc(var(--franja-w, 28px) * 2)
+    );
+  }
+
+  /* Marco tipo passe-partout (componente #2) */
+  .passepartout {
+    border: 1px solid #4a4036;
+    padding: 12px;
+    background-color: #fafafa;
+  }
+}

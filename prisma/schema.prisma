@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model RSVP {
+  id            String   @id @default(cuid())
+  nombre        String
+  email         String   @unique
+  asiste        Boolean
+  acompanantes  Int      @default(0)
+  restricciones String?
+  mensaje       String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
