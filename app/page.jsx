@@ -13,6 +13,8 @@ import RSVPForm from '@/components/RSVPForm';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import ColumnaFranjas from '@/components/ColumnaFranjas';
+import FadeIn from '@/components/FadeIn';
+
 
 export default function Home() {
   return (
@@ -21,9 +23,19 @@ export default function Home() {
       <main className="pt-14">
         {/* ── Página 1 de la plantilla ── */}
         <Hero />
-        <FotoFechaLugar />
-        <Bienvenida />
-        <Cronograma />
+        
+        <FadeIn>
+          <FotoFechaLugar />
+        </FadeIn>
+        
+        <FadeIn>
+          <Bienvenida />
+        </FadeIn>
+        
+        <FadeIn>
+          <Cronograma />
+        </FadeIn>
+        
         {/* Remate de la página 1: banda de franjas (componente #5) */}
         <Franjas />
 
@@ -31,13 +43,34 @@ export default function Home() {
             Columna decorativa de franjas al borde derecho, solo desktop (componente #10) */}
         <div className="relative">
           <ColumnaFranjas />
-          <ComoLlegar />
-          <Traslados />
-          <Alojamiento />
-          <GuiaSevilla />
-          <Regalo />
-          <RSVPForm />
-          <FAQ />
+          
+          <FadeIn>
+            <ComoLlegar />
+          </FadeIn>
+          
+          <FadeIn>
+            <Traslados />
+          </FadeIn>
+          
+          <FadeIn>
+            <Alojamiento />
+          </FadeIn>
+          
+          <FadeIn>
+            <GuiaSevilla />
+          </FadeIn>
+          
+          <FadeIn>
+            <Regalo />
+          </FadeIn>
+          
+          <FadeIn>
+            <RSVPForm />
+          </FadeIn>
+          
+          <FadeIn>
+            <FAQ />
+          </FadeIn>
         </div>
 
         {/* Cierre final (componente #11) */}
