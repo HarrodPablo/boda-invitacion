@@ -1,7 +1,10 @@
-import { content } from '@/data/content';
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
 
 // Componente #8 — Grid de cards sobre bloque de color, cada card con foto chica.
 export default function GuiaSevilla() {
+  const { content } = useLanguage();
   const { heading, subtitulo, lugares } = content.guia;
 
   return (
@@ -16,12 +19,12 @@ export default function GuiaSevilla() {
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {lugares.map((lugar, i) => (
-            <div key={i} className="flex gap-4 bg-fondo p-4 shadow-sm">
+            <div key={i} className="flex flex-col sm:flex-row gap-4 bg-fondo p-4 shadow-sm">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={lugar.imagen}
                 alt={lugar.imagenAlt}
-                className="h-24 w-24 flex-shrink-0 object-cover"
+                className="h-56 w-full sm:h-40 sm:w-32 flex-shrink-0 object-cover shadow-sm"
               />
               <div>
                 <p className="font-script text-xl italic text-textoCalido">{lugar.nombre}</p>

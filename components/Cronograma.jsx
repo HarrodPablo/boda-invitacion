@@ -1,4 +1,6 @@
-import { content } from '@/data/content';
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
 
 // Iconos lineales minimalistas (stroke, sin relleno) — componente #4.
 const iconos = {
@@ -7,6 +9,12 @@ const iconos = {
       <circle cx="9" cy="14" r="6" />
       <circle cx="15" cy="14" r="6" />
       <path d="M9 8l1.5-4h3L15 8" />
+    </>
+  ),
+  mapa: (
+    <>
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
     </>
   ),
   copa: (
@@ -42,6 +50,7 @@ const iconos = {
 };
 
 export default function Cronograma() {
+  const { content } = useLanguage();
   const { heading, subtitulo, hitos } = content.cronograma;
 
   return (

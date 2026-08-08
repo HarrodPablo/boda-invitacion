@@ -1,11 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { content } from '@/data/content';
+import { useLanguage } from '@/context/LanguageContext';
 
 // Componente #11 (footer de firma) + acordeón de preguntas usando #7 por item.
 export default function FAQ() {
-  const { heading, preguntas, contacto, firma } = content.faq;
+  const { content } = useLanguage();
+  const { heading, preguntas, contacto, firma, firma2 } = content.faq;
   const [abierta, setAbierta] = useState(null);
 
   return (
@@ -50,7 +51,8 @@ export default function FAQ() {
               {contacto.telefono}
             </a>
           </p>
-          <p className="mt-8 font-script text-2xl italic text-textoCalido sm:text-3xl">{firma}</p>
+          <p className="mt-12 text-sm text-texto">{firma}</p>
+          {firma2 && <p className="mt-4 font-script text-3xl italic text-textoCalido sm:text-4xl">{firma2}</p>}
         </div>
       </div>
     </section>

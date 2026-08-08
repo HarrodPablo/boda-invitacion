@@ -1,7 +1,10 @@
-import { content } from '@/data/content';
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
 
 // Componente #8 — Grid de cards sobre bloque de color (horarios de bus).
 export default function Traslados() {
+  const { content } = useLanguage();
   const { heading, subtitulo, cards } = content.traslados;
 
   return (

@@ -1,11 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { content } from '@/data/content';
+import { useLanguage } from '@/context/LanguageContext';
 
 // Componente #9 — Caja con borde fino sobre bloque de color.
 // Los datos bancarios NO se renderizan hasta el click (no van en el HTML inicial).
 export default function Regalo() {
+  const { content } = useLanguage();
   const { heading, parrafo, datos, botonLabel } = content.regalo;
   const [visible, setVisible] = useState(false);
 
@@ -28,22 +29,18 @@ export default function Regalo() {
             </button>
           ) : (
             // Este bloque solo existe en el DOM tras el click (useState).
-            <dl className="mx-auto mt-8 max-w-sm space-y-3 text-left text-sm text-textoCalido">
-              <div className="flex justify-between gap-4 border-b border-textoCalido/30 pb-2">
-                <dt className="font-semibold uppercase tracking-widest">Titular</dt>
-                <dd>{datos.titular}</dd>
+            <dl className="mx-auto mt-8 max-w-md space-y-3 text-left text-sm text-textoCalido">
+              <div className="flex flex-col gap-1 border-b border-textoCalido/30 pb-2 sm:flex-row sm:justify-between sm:gap-4">
+                <dt className="font-semibold uppercase tracking-widest">Beneficiarios</dt>
+                <dd className="sm:text-right">{datos.titular}</dd>
               </div>
-              <div className="flex justify-between gap-4 border-b border-textoCalido/30 pb-2">
-                <dt className="font-semibold uppercase tracking-widest">Alias</dt>
-                <dd className="break-all">{datos.alias}</dd>
+              <div className="flex flex-col gap-1 border-b border-textoCalido/30 pb-2 sm:flex-row sm:justify-between sm:gap-4">
+                <dt className="font-semibold uppercase tracking-widest">IBAN</dt>
+                <dd className="break-all sm:text-right">{datos.iban}</dd>
               </div>
-              <div className="flex justify-between gap-4 border-b border-textoCalido/30 pb-2">
-                <dt className="font-semibold uppercase tracking-widest">CBU</dt>
-                <dd className="break-all">{datos.cbu}</dd>
-              </div>
-              <div className="flex justify-between gap-4">
-                <dt className="font-semibold uppercase tracking-widest">Cuenta</dt>
-                <dd className="break-all">{datos.cuenta}</dd>
+              <div className="flex flex-col gap-1 sm:flex-row sm:justify-between sm:gap-4">
+                <dt className="font-semibold uppercase tracking-widest">BIC/SWIFT</dt>
+                <dd className="break-all sm:text-right">{datos.bic}</dd>
               </div>
             </dl>
           )}

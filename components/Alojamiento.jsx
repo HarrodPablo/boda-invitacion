@@ -1,7 +1,10 @@
-import { content } from '@/data/content';
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
 
 // Componente #8 — Grid de cards sobre bloque de color (hoteles).
 export default function Alojamiento() {
+  const { content } = useLanguage();
   const { heading, subtitulo, hoteles } = content.alojamiento;
 
   return (

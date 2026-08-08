@@ -4,22 +4,27 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { content } from '@/data/content';
+import { useLanguage } from '@/context/LanguageContext';
 
-// Mismo esquema base que valida el server (app/api/rsvp/route.js).
-const schema = z.object({
-  nombre: z.string().min(1, 'Ingresá tu nombre'),
-  email: z.string().email('Email inválido'),
-  asiste: z.enum(['si', 'no'], { required_error: 'Indicá si asistís' }),
-  acompanantes: z.coerce.number().int().min(0).max(20),
-  restricciones: z.string().max(500).optional(),
-  mensaje: z.string().max(1000).optional(),
-  _gotcha: z.string().optional(), // honeypot
-});
+
 
 export default function RSVPForm() {
-  const { heading, intro, fechaLimite } = content.rsvp;
+  const { content } = useLanguage();
+  const { heading, intro, fechaLimite, form } = content.rsvp;
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
+
+  const schema = z.object({
+    nombre: z.string().min(1, form.nombrePlaceholder),
+    telefono: z.string().min(1, form.telefonoPlaceholder),
+    email: z.string().email(form.emailPlaceholder),
+    asiste: z.enum(['si', 'no'], { required_error: ' ' }),
+    autobus: z.enum(['si', 'no'], { required_error: ' ' }),
+    acompanantes: z.coerce.number().int().min(0).max(20),
+    restricciones: z.string().max(500).optional(),
+    cancion: z.string().max(200).optional(),
+    mensaje: z.string().max(1000).optional(),
+    _gotcha: z.string().optional(), // honeypot
+  });
 
   const {
     register,
@@ -28,7 +33,7 @@ export default function RSVPForm() {
     formState: { errors },
   } = useForm({
     resolver: zodResolver(schema),
-    defaultValues: { asiste: 'si', acompanantes: 0, _gotcha: '' },
+    defaultValues: { asiste: 'si', autobus: 'no', acompanantes: 0, telefono: '', _gotcha: '' },
   });
 
   const onSubmit = async (values) => {
@@ -40,6 +45,7 @@ export default function RSVPForm() {
         body: JSON.stringify({
           ...values,
           asiste: values.asiste === 'si',
+          autobus: values.autobus === 'si',
         }),
       });
       if (!res.ok) throw new Error('Request failed');
@@ -66,16 +72,16 @@ export default function RSVPForm() {
 
         {status === 'success' ? (
           <div className="mt-8 border border-textoCalido bg-fondo p-8 text-center">
-            <p className="font-script text-2xl italic text-textoCalido">¡Gracias!</p>
+            <p className="font-script text-2xl italic text-textoCalido">{form.exitoTitulo}</p>
             <p className="mt-2 text-sm text-texto">
-              Recibimos tu confirmación. Te enviamos un email con los detalles.
+              {form.exitoMensaje}
             </p>
             <button
               type="button"
               onClick={() => setStatus('idle')}
               className="mt-4 text-xs uppercase tracking-widest text-textoCalido underline"
             >
-              Enviar otra respuesta
+              {form.enviarOtra}
             </button>
           </div>
         ) : (
@@ -88,30 +94,37 @@ export default function RSVPForm() {
 
             <div>
               <label htmlFor="nombre" className={labelBase}>
-                Nombre completo
+                {form.nombre}
               </label>
               <input id="nombre" type="text" className={inputBase} {...register('nombre')} />
               {errors.nombre && <p className="mt-1 text-xs text-red-700">{errors.nombre.message}</p>}
             </div>
 
             <div>
+              <label htmlFor="telefono" className={labelBase}>
+                {form.telefono}
+              </label>
+              <input id="telefono" type="tel" className={inputBase} {...register('telefono')} />
+              {errors.telefono && <p className="mt-1 text-xs text-red-700">{errors.telefono.message}</p>}
+            </div>
+            <div>
               <label htmlFor="email" className={labelBase}>
-                Email
+                {form.email}
               </label>
               <input id="email" type="email" className={inputBase} {...register('email')} />
               {errors.email && <p className="mt-1 text-xs text-red-700">{errors.email.message}</p>}
             </div>
 
             <div>
-              <span className={labelBase}>¿Asistís?</span>
+              <span className={labelBase}>{form.asistencia}</span>
               <div className="flex gap-6">
                 <label htmlFor="asiste-si" className="flex items-center gap-2 text-sm text-texto">
                   <input id="asiste-si" type="radio" value="si" {...register('asiste')} />
-                  Sí, ahí estaré
+                  {form.siAsisto}
                 </label>
                 <label htmlFor="asiste-no" className="flex items-center gap-2 text-sm text-texto">
                   <input id="asiste-no" type="radio" value="no" {...register('asiste')} />
-                  No podré ir
+                  {form.noAsisto}
                 </label>
               </div>
               {errors.asiste && <p className="mt-1 text-xs text-red-700">{errors.asiste.message}</p>}
@@ -119,7 +132,7 @@ export default function RSVPForm() {
 
             <div>
               <label htmlFor="acompanantes" className={labelBase}>
-                Cantidad de acompañantes
+                {form.acompanantes}
               </label>
               <input
                 id="acompanantes"
@@ -134,8 +147,23 @@ export default function RSVPForm() {
             </div>
 
             <div>
+              <span className={labelBase}>{form.autobus}</span>
+              <div className="flex gap-6">
+                <label htmlFor="autobus-si" className="flex items-center gap-2 text-sm text-texto">
+                  <input id="autobus-si" type="radio" value="si" {...register('autobus')} />
+                  {form.si}
+                </label>
+                <label htmlFor="autobus-no" className="flex items-center gap-2 text-sm text-texto">
+                  <input id="autobus-no" type="radio" value="no" {...register('autobus')} />
+                  {form.no}
+                </label>
+              </div>
+              {errors.autobus && <p className="mt-1 text-xs text-red-700">{errors.autobus.message}</p>}
+            </div>
+
+            <div>
               <label htmlFor="restricciones" className={labelBase}>
-                Restricciones alimentarias (opcional)
+                {form.restricciones}
               </label>
               <input
                 id="restricciones"
@@ -146,15 +174,27 @@ export default function RSVPForm() {
             </div>
 
             <div>
+              <label htmlFor="cancion" className={labelBase}>
+                {form.cancion}
+              </label>
+              <input
+                id="cancion"
+                type="text"
+                className={inputBase}
+                {...register('cancion')}
+              />
+            </div>
+
+            <div>
               <label htmlFor="mensaje" className={labelBase}>
-                Mensaje (opcional)
+                {form.mensaje}
               </label>
               <textarea id="mensaje" rows={3} className={inputBase} {...register('mensaje')} />
             </div>
 
             {status === 'error' && (
               <p className="text-sm text-red-700">
-                Hubo un problema al enviar. Probá de nuevo en unos minutos.
+                {form.error}
               </p>
             )}
 
@@ -163,7 +203,7 @@ export default function RSVPForm() {
               disabled={status === 'loading'}
               className="w-full bg-textoCalido py-3 text-xs uppercase tracking-widest text-fondo transition-opacity hover:opacity-90 disabled:opacity-50"
             >
-              {status === 'loading' ? 'Enviando…' : 'Confirmar asistencia'}
+              {status === 'loading' ? form.enviando : form.enviar}
             </button>
           </form>
         )}

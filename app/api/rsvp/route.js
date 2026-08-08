@@ -6,10 +6,13 @@ import { z } from 'zod';
 
 const schema = z.object({
   nombre: z.string().min(1),
+  telefono: z.string().min(1),
   email: z.string().email(),
   asiste: z.boolean(),
+  autobus: z.boolean(),
   acompanantes: z.coerce.number().int().min(0).max(20).default(0),
   restricciones: z.string().max(500).optional(),
+  cancion: z.string().max(200).optional(),
   mensaje: z.string().max(1000).optional(),
   _gotcha: z.string().optional(),
 });
@@ -37,15 +40,15 @@ export async function POST(request) {
     return Response.json({ ok: true });
   }
 
-  const { nombre, email, asiste, acompanantes, restricciones, mensaje } = body;
+  const { nombre, telefono, email, asiste, autobus, acompanantes, restricciones, cancion, mensaje } = body;
 
   // 1) Persistir (upsert por email: no duplica si el mismo email confirma de nuevo)
   let rsvp;
   try {
     rsvp = await prisma.rSVP.upsert({
       where: { email },
-      update: { nombre, asiste, acompanantes, restricciones, mensaje },
-      create: { nombre, email, asiste, acompanantes, restricciones, mensaje },
+      update: { nombre, telefono, asiste, autobus, acompanantes, restricciones, cancion, mensaje },
+      create: { nombre, telefono, email, asiste, autobus, acompanantes, restricciones, cancion, mensaje },
     });
   } catch (err) {
     console.error('Error guardando RSVP:', err);
@@ -60,10 +63,13 @@ export async function POST(request) {
       subject: `Nueva confirmación: ${nombre}`,
       html: `
         <p><b>Nombre:</b> ${nombre}</p>
+        <p><b>Teléfono:</b> ${telefono}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Asiste:</b> ${asiste ? 'Sí' : 'No'}</p>
+        <p><b>Autobús:</b> ${autobus ? 'Sí' : 'No'}</p>
         <p><b>Acompañantes:</b> ${acompanantes}</p>
         <p><b>Restricciones:</b> ${restricciones || '-'}</p>
+        <p><b>Canción:</b> ${cancion || '-'}</p>
         <p><b>Mensaje:</b> ${mensaje || '-'}</p>
       `,
     });

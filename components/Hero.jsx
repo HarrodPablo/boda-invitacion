@@ -1,7 +1,10 @@
-import { content } from '@/data/content';
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
 
 // Componente #1 — Hero de foto llena con overlay degradado y nombres superpuestos.
 export default function Hero() {
+  const { content } = useLanguage();
   const { nombre1, conector, nombre2, subtitulo, imagen, imagenAlt } = content.hero;
 
   return (

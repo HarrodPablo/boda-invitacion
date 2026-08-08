@@ -10,10 +10,13 @@ datasource db {
 model RSVP {
   id            String   @id @default(cuid())
   nombre        String
+  telefono      String?
   email         String   @unique
   asiste        Boolean
   acompanantes  Int      @default(0)
+  autobus       Boolean  @default(false)
   restricciones String?
+  cancion       String?
   mensaje       String?
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt

@@ -1,5 +1,6 @@
 import { Playfair_Display, Cormorant_Garamond, Jost } from 'next/font/google';
 import { content } from '@/data/content';
+import { LanguageProvider } from '@/context/LanguageContext';
 import './globals.css';
 
 const playfair = Playfair_Display({
@@ -37,7 +38,9 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="robots" content="noindex, nofollow" />
       </head>
-      <body className="font-body antialiased">{children}</body>
+      <body className="font-body antialiased">
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }

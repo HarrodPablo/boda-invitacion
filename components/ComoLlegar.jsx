@@ -1,7 +1,10 @@
-import { content } from '@/data/content';
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
 
 // Sección 5 — Componente #6 (bloque intro) + #7 (grid 2 col) + mapa embebido.
 export default function ComoLlegar() {
+  const { content } = useLanguage();
   const { heading, intro, ceremonia, finca, mapaQuery } = content.comoLlegar;
   const q = encodeURIComponent(mapaQuery);
   const mapaSrc = `https://www.google.com/maps?q=${q}&output=embed`;

@@ -1,7 +1,10 @@
-import { content } from '@/data/content';
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
 
 // Componente #2 — Foto enmarcada (passe-partout) + texto lateral (fecha / lugar).
 export default function FotoFechaLugar() {
+  const { content } = useLanguage();
   const { imagen, imagenAlt, fecha, conector, lugar } = content.fechaLugar;
 
   return (

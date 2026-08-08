@@ -8,7 +8,7 @@ export const content = {
   // Metadatos / SEO
   meta: {
     titulo: 'Julieta & Julio · Nos casamos',
-    descripcion: 'Invitación de boda de Julieta y Julio — 1 de septiembre de 2026, Sevilla.',
+    descripcion: 'Invitación de boda de Julieta y Julio — 20 de Febrero de 2027, Sevilla.',
   },
 
   // Navegación (anclas). El label es lo visible; el id debe coincidir con el <section id>.
@@ -29,9 +29,9 @@ export const content = {
   // 1. Hero / Nombres — componente #1
   hero: {
     nombre1: 'Julieta',
-    conector: 'y',
+    conector: '&',
     nombre2: 'Julio',
-    subtitulo: 'NOS CASAMOS URAAAAAAAAAAAAAAA',
+    subtitulo: '¡Nos casamos!',
     imagen:
       'https://i.ibb.co/4wsGNsRt/Whats-App-Image-2026-07-04-at-20-19-38-2.jpg0',
     imagenAlt: 'Julieta y Julio abrazados junto al agua',
@@ -42,9 +42,9 @@ export const content = {
     imagen:
       'https://i.ibb.co/SX8jJGvc/Whats-App-Image-2026-07-04-at-20-19-38.jpg',
     imagenAlt: 'Pareja tomada de la mano durante el atardecer',
-    fecha: '50 de febrero de 2027',
+    fecha: '20 de Febrero de 2027',
     conector: 'en',
-    lugar: 'HACIENDA SAN LUIS DE MEJINA, SEVILLA - ESPAÑA',
+    lugar: 'SEVILLA - ESPAÑA',
   },
 
   // 3. Bienvenida — componente #3 (full-bleed con overlay)
@@ -54,7 +54,8 @@ export const content = {
     imagenAlt: 'Salón decorado para una celebración de boda',
     heading: 'Nuestro gran día',
     parrafo:
-      'Queremos celebrar este momento tan especial de nuestras vidas rodeados de la gente que más queremos. Tu presencia y tu apoyo significan el mundo para nosotros, y no podemos imaginar este día sin vos a nuestro lado. En las siguientes secciones vas a encontrar todos los detalles que necesitás para acompañarnos: horarios, cómo llegar, dónde alojarte y todo lo demás. Gracias por ser parte de nuestra historia.',
+      'Hoy elegimos Sevilla no solo como la ciudad que será nuestro hogar, sino también como el escenario donde celebraremos el comienzo de una nueva etapa.\n\n' +
+      'Con inmensa alegría, queremos invitarte a compartir con nosotros el día en que diremos "sí, quiero", rodeados de quienes han sido parte de nuestra historia y de este hermoso camino que nos ha traído hasta aquí.',
     cierre: 'Con amor,',
     firma: 'Julieta & Julio',
   },
@@ -62,14 +63,14 @@ export const content = {
   // 4. Cronología del día — componente #4 (fila de iconos)
   cronograma: {
     heading: 'EL DÍA',
-    subtitulo: 'Nuestro gran día comienza a las 12:30, no llegues más tarde',
+    subtitulo: 'Nuestro gran día comienza a las 12:00, no llegues más tarde',
     hitos: [
-      { icono: 'anillos', hora: '12:30', label: 'ceremonia' },
-      { icono: 'copa', hora: '13:30', label: 'aperitivo' },
-      { icono: 'torta', hora: '15:00', label: 'corte de torta' },
-      { icono: 'plato', hora: '16:00', label: 'cena' },
-      { icono: 'fiesta', hora: '20:00', label: 'fiesta' },
-      { icono: 'reloj', hora: '02:00', label: 'regreso' },
+      { icono: 'anillos', hora: '12:00', label: 'Ceremonia religiosa' },
+      { icono: 'mapa', hora: '14:00', label: 'Llegada a la hacienda' },
+      { icono: 'copa', hora: '14:15 - 16:00', label: 'Coctel' },
+      { icono: 'plato', hora: '16:15 - 17:45', label: 'Almuerzo' },
+      { icono: 'fiesta', hora: '18:00', label: 'Barra libre' },
+      { icono: 'reloj', hora: '23:00', label: 'Fin de la fiesta' },
     ],
   },
 
@@ -77,16 +78,16 @@ export const content = {
   comoLlegar: {
     heading: 'Cómo llegar',
     intro:
-      'La ceremonia y la celebración se realizan en el mismo predio. Te dejamos las direcciones exactas y un mapa para que no te pierdas. Recomendamos llegar con tiempo para disfrutar del lugar con calma.',
+      'La ceremonia religiosa y la celebración se realizarán en diferentes lugares. A continuación encontrarán las direcciones de cada uno, junto con un mapa para facilitar su llegada.',
     ceremonia: {
       titulo: 'CEREMONIA',
-      lugar: 'Iglesia de Santa Ana',
-      direccion: 'C. Vidrio 23, Triana, 41010 Sevilla',
+      lugar: 'Parroquia San Antonio María Claret',
+      direccion: 'Av. Padre García Tejero, 8, 41012',
     },
     finca: {
-      titulo: 'FINCA',
+      titulo: 'HACIENDA',
       lugar: 'Hacienda San Luis de Mejina',
-      direccion: 'Av. Padre García Tejero, 8, 41012 Sevilla, España',
+      direccion: 'Camino de Mejina s/n, 41807, Espartinas',
     },
     // Dirección usada para el iframe y el botón "Abrir en Google Maps"
     mapaQuery: 'Cam. de Mejina, s/n, 41807 Espartinas, Sevilla, España',
@@ -98,9 +99,9 @@ export const content = {
     subtitulo: 'Servicio de bus gratuito para todos los invitados',
     cards: [
       {
-        titulo: 'Ida',
-        hora: '11:45',
-        origen: 'Plaza Nueva, Sevilla centro',
+        titulo: 'Salida',
+        hora: '13:30',
+        origen: 'Parroquia San Antonio Maria Claret',
         destino: 'Hacienda San Luis de Mejina',
         nota: 'Salida puntual. Presentate 10 minutos antes.',
       },
@@ -113,14 +114,14 @@ export const content = {
       },
       {
         titulo: 'Regreso',
-        hora: '01:30',
+        hora: '21:30',
         origen: 'Hacienda San Luis de Mejina',
         destino: 'Plaza Nueva, Sevilla centro',
         nota: 'Primer bus de vuelta.',
       },
       {
         titulo: 'Regreso',
-        hora: '02:30',
+        hora: '23:00',
         origen: 'Hacienda San Luis de Mejina',
         destino: 'Plaza Nueva, Sevilla centro',
         nota: 'Último bus de la noche.',
@@ -130,43 +131,50 @@ export const content = {
 
   // 7. Alojamiento — componente #8 (cards), 5 hoteles
   alojamiento: {
-    heading: 'DÓNDE ALOJARSE CERCA',
-    subtitulo: 'Opciones recomendadas a distintas distancias del centro',
+    heading: 'Dónde hospedarte en Sevilla',
+    subtitulo: 'Estas son algunas de nuestras recomendaciones de alojamiento en Sevilla. Si tienes cualquier pregunta o necesitas ayuda para elegir la mejor opción, no dudes en escribirnos. Estaremos encantados de ayudarte.',
     hoteles: [
       {
-        nombre: 'Hotel Alfonso XIII',
-        direccion: 'C. San Fernando 2, 41004 Sevilla',
-        distancia: 'A 15 min de la finca',
-        telefono: '+34 954 917 000',
-        reserva: 'https://www.marriott.com',
+        nombre: 'Hotel Lobby Sevilla',
+        direccion: 'C. Reyes Católicos 23, 41001',
+        distancia: 'A 14 min de la hacienda',
+        telefono: '+34 854 53 88 68',
+        reserva: 'https://www.lobbyroomhotel.com',
       },
       {
-        nombre: 'Hotel Colón Gran Meliá',
-        direccion: 'C. Canalejas 1, 41001 Sevilla',
-        distancia: 'A 18 min de la finca',
-        telefono: '+34 954 505 599',
-        reserva: 'https://www.melia.com',
+        nombre: 'Hotel Petit Palace Puerta de Triana',
+        direccion: 'C. Reyes Católicos, 5, Casco Antiguo, 41001',
+        distancia: 'A 15 min de la hacienda',
+        telefono: '+34 954 21 62 59',
+        reserva: 'https://www.petitpalace.com',
       },
       {
-        nombre: 'Casa 1800 Sevilla',
-        direccion: 'C. Rodrigo Caro 6, 41004 Sevilla',
-        distancia: 'A 16 min de la finca',
-        telefono: '+34 954 561 800',
-        reserva: 'https://www.hotelcasa1800sevilla.com',
+        nombre: 'Hotel Cervantes',
+        direccion: 'C. Cervantes 12, 41003',
+        distancia: 'A 19 min de la hacienda',
+        telefono: '+34 954 90 02 80',
+        reserva: 'https://www.hotel-cervantes.com',
       },
       {
-        nombre: 'Hotel Kivir',
-        direccion: 'C. Betis 67, Triana, 41010 Sevilla',
-        distancia: 'A 12 min de la finca',
-        telefono: '+34 955 271 700',
-        reserva: 'https://www.hotelkivir.com',
+        nombre: 'Eurostars Al-Ándalus Palace',
+        direccion: 'Av de la Palmera s/n, 41012',
+        distancia: 'A 21 min de la hacienda',
+        telefono: '+34 954 23 06 00',
+        reserva: 'https://www.eurostarshotels.com/eurostars-al-andalus-palace.html',
       },
       {
-        nombre: 'Hostal Boutique La Banda',
-        direccion: 'C. Dos de Mayo 16, 41001 Sevilla',
-        distancia: 'A 20 min de la finca',
-        telefono: '+34 955 228 118',
-        reserva: 'https://www.labandahostel.com',
+        nombre: 'Hotel Ribera de Triana',
+        direccion: 'Plaza de la Chapina 1, 41010',
+        distancia: 'A 13 min de la hacienda',
+        telefono: '+34 900 80 88 22(ext 2)',
+        reserva: 'https://hotelriberadetriana.com',
+      },
+      {
+        nombre: 'Hotel Petit Palace Vargas',
+        direccion: 'Plaza La Legión 7, 41001',
+        distancia: 'A 12 min de la hacienda',
+        telefono: '+34 954 26 80 80',
+        reserva: 'https://www.petitpalace.com',
       },
     ],
   },
@@ -174,35 +182,42 @@ export const content = {
   // 8. Guía de Sevilla — componente #8 (cards con foto)
   guia: {
     heading: 'GUÍA DE SEVILLA',
-    subtitulo: 'Qué comer y qué visitar mientras estás en la ciudad',
+    subtitulo: 'Sitios que si o si tienes que visitar si estas en la ciudad',
     lugares: [
       {
         nombre: 'Real Alcázar',
-        descripcion: 'Palacio mudéjar y jardines. Reservá entrada online con antelación.',
+        descripcion: 'Es el palacio real en uso más antiguo de Europa, ubicado a pocos minutos a pie en el centro histórico. Combina estilos islámico, mudéjar, gótico, renacentista y barroco a través de mil años de historia.',
         imagen:
-          'https://images.unsplash.com/photo-1558370781-d6196949e317?auto=format&fit=crop&w=600&q=80',
+          'https://i.pinimg.com/736x/85/e1/82/85e182f33428df40d5c92cd8c97994fc.jpg',
         imagenAlt: 'Arcos del Real Alcázar de Sevilla',
       },
       {
         nombre: 'Plaza de España',
-        descripcion: 'Uno de los rincones más fotografiados de la ciudad. Ideal al atardecer.',
+        descripcion: 'Destaca por su gran edificio semicircular con fachadas de arcos y columnas.',
         imagen:
-          'https://images.unsplash.com/photo-1559386081-325882507af7?auto=format&fit=crop&w=600&q=80',
+          'https://i.pinimg.com/736x/f7/04/46/f7044621d6c53e07b4a65119775b0f5f.jpg',
         imagenAlt: 'Plaza de España de Sevilla',
       },
       {
-        nombre: 'Mercado de Triana',
-        descripcion: 'Tapas y productos locales al otro lado del río. Probá el pescaíto frito.',
+        nombre: 'Barrio Santa Cruz',
+        descripcion: 'Fue la antigua judería de Sevilla. Hoy es uno de los barrios más populares y concurridos de la ciudad.',
         imagen:
-          'https://images.unsplash.com/photo-1515443961218-a51367888e4b?auto=format&fit=crop&w=600&q=80',
-        imagenAlt: 'Puesto de tapas en un mercado',
+          'https://i.pinimg.com/1200x/ec/18/ae/ec18ae3f6f14f3f3205022b2f7ea78c9.jpg',
+        imagenAlt: 'Barrio Santa Cruz',
       },
       {
-        nombre: 'Catedral y La Giralda',
-        descripcion: 'Subí a la Giralda para las mejores vistas del casco histórico.',
+        nombre: 'Las Setas',
+        descripcion: 'Conocida por ser la estructura de madera más grande del mundo.',
         imagen:
-          'https://images.unsplash.com/photo-1567966529895-31d1e02c7c15?auto=format&fit=crop&w=600&q=80',
-        imagenAlt: 'La Giralda de Sevilla',
+          'https://i.pinimg.com/736x/c7/b3/0d/c7b30d8b6c553eb287f1c0312d42410a.jpg',
+        imagenAlt: 'Setas',
+      },
+      {
+        nombre: 'Triana',
+        descripcion: 'Este barrio es famoso por su fuerte identidad propia, su arraigada tradición flamenca, su historia marinera y su ubicación a la otra orilla del río Guadalquivir conectada por el popular Puente de Isabel II.',
+        imagen:
+          'https://i.pinimg.com/736x/7d/3f/6b/7d3f6bf23a7eceabf39ae5637ac2658c.jpg',
+        imagenAlt: 'Triana',
       },
     ],
   },
@@ -211,13 +226,12 @@ export const content = {
   regalo: {
     heading: 'Regalo',
     parrafo:
-      'Lo más importante para nosotros es contar con vos ese día. Si además querés hacernos un regalo, podés colaborar con nuestra luna de miel a través de los siguientes datos.',
+      'Para nuestra futura casa tenemos tostadora, cafetera y hasta demasiados mates. Si queréis hacernos un regalo, nuestra hucha para la luna de miel os lo agradecerá:',
     // Estos datos NO se renderizan en el HTML inicial; solo aparecen tras "Ver datos".
     datos: {
-      titular: 'Julieta & Julio',
-      alias: 'Julieta.Julio.boda',
-      cbu: '0000003100010000000000',
-      cuenta: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+      titular: 'Julieta Llarrull & Julio Cirera Benito',
+      iban: 'ES5615830001119150667751',
+      bic: 'REVOESM2',
     },
     botonLabel: 'Ver datos',
   },
@@ -226,8 +240,33 @@ export const content = {
   rsvp: {
     heading: 'RSVP',
     intro:
-      'Por favor confirmanos tu asistencia antes del 1 de julio de 2026. Contanos si venís, con cuántos acompañantes y si tenés alguna restricción alimentaria. Te enviaremos un email de confirmación.',
-    fechaLimite: '1 de julio de 2026',
+      'Por favor, confírmanos tu asistencia lo antes posible. A continuación encontrarás un formulario con la información que necesitamos.Unas semanas antes de la boda recibirás un nuevo recordatorio para que puedas confirmar tu asistencia de forma definitiva.',
+    fechaLimite: 'x de xxxxx de 202x',
+    // Textos del formulario
+    form: {
+      nombre: 'Nombre completo',
+      nombrePlaceholder: 'Ingresa tu nombre',
+      telefono: 'Teléfono',
+      telefonoPlaceholder: 'Ingresa tu teléfono',
+      email: 'Email',
+      emailPlaceholder: 'Email inválido',
+      asistencia: '¿Asistís?',
+      siAsisto: 'Sí asisto',
+      noAsisto: 'No podré',
+      acompanantes: 'Cantidad de acompañantes',
+      autobus: 'Autobús: ¿Vas a necesitar el servicio del autobús?',
+      si: 'Sí',
+      no: 'No',
+      restricciones: 'Restricciones alimentarias (Por favor, indícanos si tienes alguna alergia, intolerancia o necesidad alimentaria especial)',
+      cancion: 'Canción imprescindible (¿Cuál es esa canción que crees que tiene que sonar sí o sí en nuestra boda?)',
+      mensaje: 'Mensaje (opcional)',
+      enviar: 'Confirmar asistencia',
+      enviando: 'Enviando…',
+      error: 'Hubo un problema al enviar. Probá de nuevo en unos minutos.',
+      exitoTitulo: '¡Gracias!',
+      exitoMensaje: 'Recibimos tu confirmación. Te enviamos un email con los detalles.',
+      enviarOtra: 'Enviar otra respuesta'
+    }
   },
 
   // 11. FAQ / Contacto — componente #11 + acordeón (#7)
@@ -236,15 +275,11 @@ export const content = {
     preguntas: [
       {
         q: 'CÓDIGO DE VESTIMENTA',
-        a: 'Etiqueta / formal. Te pedimos evitar el blanco, reservado para la novia.',
-      },
-      {
-        q: 'NIÑOS',
-        a: 'La celebración es solo para adultos. Agradecemos tu comprensión.',
+        a: 'Formal',
       },
       {
         q: 'APARCAMIENTO',
-        a: 'Hay estacionamiento gratuito en la finca, pero recomendamos usar el bus.',
+        a: 'En la hacienda disponemos de espacio para que puedas dejar tu coche sin problema. Si te resulta más cómodo, puedes venir en tu propio vehículo; si no, también tendrás la opción de venir en autobús.',
       },
       {
         q: 'ALERGIAS',
@@ -252,11 +287,12 @@ export const content = {
       },
     ],
     contacto: {
-      texto: 'Ante cualquier duda, escribinos:',
+      texto: 'Ante cualquier duda, podéis escribirnos al:',
       email: 'Julieta.Julio.boda@gmail.com',
       telefono: '+34 635 07 11 85',
     },
-    firma: 'Con amor, Julieta & Julio',
+    firma: 'Nos hace muchísima ilusión compartir este día tan especial con vosotros.',
+    firma2: 'Julieta & Julio',
   },
 };
 

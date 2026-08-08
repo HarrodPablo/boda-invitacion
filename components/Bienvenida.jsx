@@ -1,7 +1,10 @@
-import { content } from '@/data/content';
+'use client';
+
+import { useLanguage } from '@/context/LanguageContext';
 
 // Componente #3 — Bloque full-bleed con foto + overlay opaco + texto centrado.
 export default function Bienvenida() {
+  const { content } = useLanguage();
   const { imagen, imagenAlt, heading, parrafo, cierre, firma } = content.bienvenida;
 
   return (
@@ -21,7 +24,7 @@ export default function Bienvenida() {
 
       <div className="relative z-10 mx-auto max-w-2xl px-6 py-20 text-center text-fondo sm:py-24">
         <h2 className="font-script text-3xl italic sm:text-4xl">{heading}</h2>
-        <p className="mt-8 text-justify text-sm font-light leading-relaxed sm:text-base">
+        <p className="mt-8 whitespace-pre-line text-justify text-sm font-light leading-relaxed sm:text-base">
           {parrafo}
         </p>
         <p className="mt-8 text-sm font-light">{cierre}</p>
