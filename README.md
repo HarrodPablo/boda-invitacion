@@ -1,7 +1,8 @@
 # Boda · Julieta & Julio — Invitación web
 
 Web de invitación de boda de una sola página (scroll continuo con anclas), responsive
-mobile-first. Todo el contenido editable vive en [`data/content.js`](data/content.js).
+mobile-first y con soporte bilingüe (Español / Inglés). Todo el contenido editable vive en 
+[`data/content.js`](data/content.js) (Español) y [`data/content_en.js`](data/content_en.js) (Inglés).
 
 ## Stack
 
@@ -21,7 +22,8 @@ mobile-first. Todo el contenido editable vive en [`data/content.js`](data/conten
   page.jsx             ensambla las 11 secciones
   globals.css
 /components             un componente por sección + Franjas / ColumnaFranjas / Nav
-/data/content.js        ÚNICA fuente de contenido
+/context                LanguageContext.jsx (gestión de estado de idioma)
+/data                   content.js (ES) y content_en.js (EN) - ÚNICA fuente de contenido
 /lib/prisma.js          singleton de PrismaClient (serverless-safe)
 /prisma/schema.prisma
 tailwind.config.js

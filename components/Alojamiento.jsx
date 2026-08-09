@@ -30,14 +30,14 @@ export default function Alojamiento() {
                   {hotel.telefono}
                 </a>
               </p>
-              <a
+              {/* <a
                 href={hotel.reserva}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-4 inline-block self-start border border-textoCalido px-4 py-2 text-xs uppercase tracking-widest text-textoCalido transition-colors hover:bg-textoCalido hover:text-fondo"
               >
                 Reservar
-              </a>
+              </a> */}
             </div>
           ))}
         </div>
