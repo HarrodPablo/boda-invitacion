@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useState } from 'react';
 
 // Componente #11 (footer de firma) + acordeón de preguntas usando #7 por item.
 export default function FAQ() {

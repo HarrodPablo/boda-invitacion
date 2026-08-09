@@ -19,7 +19,14 @@ export default function Traslados() {
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {cards.map((card, i) => (
-            <div key={i} className="bg-fondo p-6 text-center shadow-sm">
+            <div
+              key={i}
+              className={`bg-fondo p-6 text-center shadow-sm ${
+                cards.length === 3 && i === 0
+                  ? 'sm:col-span-2 sm:w-[calc(50%-0.75rem)] sm:justify-self-center'
+                  : ''
+              }`}
+            >
               <p className="font-script text-2xl italic text-textoCalido">{card.titulo}</p>
               <p className="mt-2 text-3xl font-bold tracking-widest text-texto">{card.hora}</p>
               <p className="mt-3 text-sm text-texto">

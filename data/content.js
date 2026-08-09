@@ -106,24 +106,17 @@ export const content = {
         nota: 'Salida puntual. Presentate 10 minutos antes.',
       },
       {
-        titulo: 'Ida (hoteles)',
-        hora: '12:00',
-        origen: 'Av. de la Constitución (frente a la Catedral)',
-        destino: 'Hacienda San Luis de Mejina',
-        nota: 'Parada intermedia en Hotel Alfonso XIII.',
-      },
-      {
         titulo: 'Regreso',
         hora: '21:30',
         origen: 'Hacienda San Luis de Mejina',
-        destino: 'Plaza Nueva, Sevilla centro',
+        destino: 'Plaza de Toros de Sevilla',
         nota: 'Primer bus de vuelta.',
       },
       {
         titulo: 'Regreso',
         hora: '23:00',
         origen: 'Hacienda San Luis de Mejina',
-        destino: 'Plaza Nueva, Sevilla centro',
+        destino: 'Plaza de Toros de Sevilla',
         nota: 'Último bus de la noche.',
       },
     ],
@@ -131,7 +124,7 @@ export const content = {
 
   // 7. Alojamiento — componente #8 (cards), 5 hoteles
   alojamiento: {
-    heading: 'Dónde hospedarte en Sevilla',
+    heading: 'Dónde hospedarse en Sevilla',
     subtitulo: 'Estas son algunas de nuestras recomendaciones de alojamiento en Sevilla. Si tienes cualquier pregunta o necesitas ayuda para elegir la mejor opción, no dudes en escribirnos. Estaremos encantados de ayudarte.',
     hoteles: [
       {
@@ -279,11 +272,11 @@ export const content = {
       },
       {
         q: 'APARCAMIENTO',
-        a: 'En la hacienda disponemos de espacio para que puedas dejar tu coche sin problema. Si te resulta más cómodo, puedes venir en tu propio vehículo; si no, también tendrás la opción de venir en autobús.',
+        a: 'En la hacienda disponemos de espacio para que puedas dejar tu coche sin problema. Si te resulta más cómodo, puedes venir en tu propio vehículo; sino, también tendrás la opción de venir en autobús.',
       },
       {
         q: 'ALERGIAS',
-        a: 'Indicá tus restricciones en el formulario de confirmación y las tendremos en cuenta.',
+        a: 'Indica tus restricciones en el formulario de confirmación y las tendremos en cuenta.',
       },
     ],
     contacto: {
