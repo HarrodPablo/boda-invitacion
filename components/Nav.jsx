@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useState } from 'react';
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -9,30 +9,32 @@ export default function Nav() {
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50 bg-fondo/90 backdrop-blur-sm shadow-sm">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+        {/* 1. Logo (Izquierda) */}
         <a
           href="#inicio"
-          className="font-script text-xl italic text-textoCalido"
+          className="font-script text-xl italic text-textoCalido shrink-0"
           onClick={() => setOpen(false)}
         >
           J &amp; J
         </a>
 
-        <div className="flex items-center gap-4 md:gap-6">
-          {/* Desktop */}
-          <ul className="hidden gap-5 md:flex">
-            {content.nav.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  className="text-xs uppercase tracking-widest text-texto transition-colors hover:text-textoCalido"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+        {/* 2. Navegación Desktop (Centro) */}
+        <ul className="hidden gap-5 md:flex">
+          {content.nav.map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                className="text-xs uppercase tracking-widest text-texto transition-colors hover:text-textoCalido"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
+        {/* 3. Controles (Derecha) */}
+        <div className="flex items-center gap-4 md:gap-6 shrink-0">
           {/* Toggle Idioma */}
           <div className="flex items-center text-xs font-semibold tracking-widest text-texto">
             <button
