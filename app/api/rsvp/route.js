@@ -55,7 +55,7 @@ export async function POST(request) {
     });
   } catch (err) {
     console.error('Error guardando RSVP:', err);
-    return Response.json({ error: 'No se pudo guardar la confirmación' }, { status: 500 });
+    return Response.json({ error: 'No se pudo guardar la confirmación', debug: err.message }, { status: 500 });
   }
 
   // 2) Google Sheets & Email al invitado. Si falla, NO rompemos la respuesta (la confirmación ya está guardada).
