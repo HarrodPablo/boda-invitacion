@@ -13,6 +13,7 @@
     "@hookform/resolvers": "^3.9.1",
     "@prisma/client": "^5.22.0",
     "framer-motion": "^12.42.2",
+    "googleapis": "^174.0.1",
     "next": "^14.2.15",
     "nodemailer": "^6.9.16",
     "react": "^18.3.1",
