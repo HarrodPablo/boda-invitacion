@@ -28,15 +28,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const auth = new google.auth.GoogleAuth({
-  credentials: {
-    client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-    // Replace \n string with actual newline for Vercel env vars
-    private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-  },
-  scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-});
-const sheets = google.sheets({ version: 'v4', auth });
+// Se elimina la inicialización global de auth y sheets para hacerla segura dentro del endpoint
 
 export async function POST(request) {
   let body;
@@ -68,7 +60,21 @@ export async function POST(request) {
 
   // 2) Google Sheets & Email al invitado. Si falla, NO rompemos la respuesta (la confirmación ya está guardada).
   try {
-    if (process.env.GOOGLE_SPREADSHEET_ID && process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL) {
+    if (process.env.GOOGLE_SPREADSHEET_ID && process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
+      // Limpiamos la clave privada de posibles comillas accidentales y escapamos los saltos de línea
+      const privateKey = process.env.GOOGLE_PRIVATE_KEY
+        .replace(/\\n/g, '\n')
+        .replace(/^["']|["']$/g, '');
+
+      const auth = new google.auth.GoogleAuth({
+        credentials: {
+          client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+          private_key: privateKey,
+        },
+        scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+      });
+      const sheets = google.sheets({ version: 'v4', auth });
+
       const fecha = new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid' });
       await sheets.spreadsheets.values.append({
         spreadsheetId: process.env.GOOGLE_SPREADSHEET_ID,
