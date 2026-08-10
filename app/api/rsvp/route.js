@@ -1,9 +1,9 @@
 export const runtime = 'nodejs'; // Nodemailer no funciona en Edge runtime
 
 import { prisma } from '@/lib/prisma';
+import { google } from 'googleapis';
 import nodemailer from 'nodemailer';
 import { z } from 'zod';
-import { google } from 'googleapis';
 
 const schema = z.object({
   nombre: z.string().min(1),
@@ -105,7 +105,7 @@ export async function POST(request) {
       from: `"Julieta & Julio" <${process.env.GMAIL_USER}>`,
       to: email,
       subject: '¡Recibimos tu confirmación!',
-      html: `<p>Hola ${nombre}, gracias por confirmar tu asistencia. ¡Te esperamos el 20 de febrero de 2027!</p>`,
+      html: `<p>Hola ${nombre}, gracias por confirmar tu asistencia. ¡Nos hace mucha ilusión que seas parte de este día ❤✨!</p>`,
     });
   } catch (err) {
     // Se loggea aparte pero no afecta el 200: no perdemos la confirmación por un error de terceros.

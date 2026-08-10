@@ -1,11 +1,12 @@
 'use client';
 
 import { useLanguage } from '@/context/LanguageContext';
+import Countdown from './Countdown';
 
 // Componente #1 — Hero de foto llena con overlay degradado y nombres superpuestos.
 export default function Hero() {
   const { content } = useLanguage();
-  const { nombre1, conector, nombre2, subtitulo, imagen, imagenAlt } = content.hero;
+  const { nombre1, conector, nombre2, subtitulo, imagen, imagenAlt, fechaBoda, mensajeLlegada, dias, horas, minutos, segundos } = content.hero;
 
   return (
     <section id="inicio" className="relative h-[65vh] min-h-[520px] w-full md:h-[85vh] overflow-hidden">
@@ -39,6 +40,11 @@ export default function Hero() {
           {nombre2}
         </h1>
         <p className="mt-8 font-allura text-4xl tracking-wide sm:text-5xl">{subtitulo}</p>
+        <Countdown
+          targetDate={fechaBoda}
+          mensajeLlegada={mensajeLlegada}
+          textos={{ dias, horas, minutos, segundos }}
+        />
       </div>
     </section>
   );

@@ -35,6 +35,12 @@ export const content = {
     imagen:
       'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390188/portada_feebgq.jpg',
     imagenAlt: 'Julieta y Julio abrazados junto al agua',
+    fechaBoda: '2027-02-20T12:00:00', // Fecha y hora objetivo para el contador
+    mensajeLlegada: '¡Llegó el gran día!',
+    dias: 'Días',
+    horas: 'Hs',
+    minutos: 'Min',
+    segundos: 'Seg'
   },
 
   fechaLugar: {
@@ -96,7 +102,7 @@ export const content = {
       direccion: 'Camino de Mejina s/n, 41807, Espartinas',
     },
     // Dirección usada para el iframe y el botón "Abrir en Google Maps"
-    mapaQuery: 'Cam. de Mejina, s/n, 41807 Espartinas, Sevilla, España',
+    mapaQuery: 'Hacienda San Luis de Mejina, Espartinas, Sevilla, España',
   },
 
   // 6. Traslados en autobús — componente #8 (cards)

@@ -28,6 +28,12 @@ export const content_en = {
     subtitulo: 'We are getting married!',
     imagen: 'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390188/portada_feebgq.jpg',
     imagenAlt: 'Julieta and Julio hugging by the water',
+    fechaBoda: '2027-02-20T12:00:00', // Fecha objetivo
+    mensajeLlegada: 'The big day is here!',
+    dias: 'Days',
+    horas: 'Hrs',
+    minutos: 'Min',
+    segundos: 'Sec'
   },
 
   // 2. Photo + Date + Place
@@ -88,7 +94,7 @@ export const content_en = {
       lugar: 'Hacienda San Luis de Mejina',
       direccion: 'Camino de Mejina s/n, 41807, Espartinas',
     },
-    mapaQuery: 'Cam. de Mejina, s/n, 41807 Espartinas, Sevilla, España',
+    mapaQuery: 'Hacienda San Luis de Mejina, Espartinas, Sevilla, Spain',
   },
 
   // 6. Bus Transport
