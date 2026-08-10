@@ -15,7 +15,7 @@ export const content_en = {
     { id: 'traslados', label: 'Transport' },
     { id: 'alojamiento', label: 'Accommodation' },
     { id: 'guia', label: 'Seville' },
-    { id: 'regalo', label: 'Gifts' },
+    { id: 'regalo', label: 'Presents' },
     { id: 'rsvp', label: 'RSVP' },
     { id: 'faq', label: 'FAQ' },
   ],
@@ -71,10 +71,10 @@ export const content_en = {
     subtitulo: 'Our big day starts at 12:00, please be on time',
     hitos: [
       { icono: 'anillos', hora: '12:00', label: 'Religious Ceremony' },
-      { icono: 'mapa', hora: '14:00', label: 'Arrival at the Hacienda' },
+      { icono: 'mapa', hora: '14:00', label: 'Arrival on site' },
       { icono: 'copa', hora: '14:15 - 16:00', label: 'Cocktail' },
       { icono: 'plato', hora: '16:15 - 17:45', label: 'Lunch' },
-      { icono: 'fiesta', hora: '18:00', label: 'Open Bar' },
+      { icono: 'fiesta', hora: '18:00', label: 'Dance and open bar' },
       { icono: 'reloj', hora: '23:00', label: 'End of Party' },
     ],
   },
@@ -90,7 +90,7 @@ export const content_en = {
       direccion: 'Av. Padre García Tejero, 8, 41012',
     },
     finca: {
-      titulo: 'HACIENDA',
+      titulo: 'Wedding meal',
       lugar: 'Hacienda San Luis de Mejina',
       direccion: 'Camino de Mejina s/n, 41807, Espartinas',
     },
@@ -100,7 +100,7 @@ export const content_en = {
   // 6. Bus Transport
   traslados: {
     heading: 'BUS TRANSFERS',
-    subtitulo: 'Free bus service for all guests',
+    subtitulo: '',
     cards: [
       {
         titulo: 'Departure',
@@ -128,48 +128,48 @@ export const content_en = {
 
   // 7. Accommodation
   alojamiento: {
-    heading: '¿Where to stay in Seville?',
+    heading: 'Where to stay in Seville',
     subtitulo: 'These are some of our accommodation recommendations in Seville. If you have any questions or need help choosing the best option, feel free to write to us. We will be happy to help you.',
     hoteles: [
       {
         nombre: 'Hotel Lobby Sevilla',
         direccion: 'C. Reyes Católicos 23, 41001',
-        distancia: '14 min from the hacienda',
+        distancia: '',
         telefono: '+34 854 53 88 68',
         reserva: 'https://www.lobbyroomhotel.com',
       },
       {
         nombre: 'Hotel Petit Palace Puerta de Triana',
         direccion: 'C. Reyes Católicos, 5, Casco Antiguo, 41001',
-        distancia: '15 min from the hacienda',
+        distancia: '',
         telefono: '+34 954 21 62 59',
         reserva: 'https://www.petitpalace.com',
       },
       {
         nombre: 'Hotel Cervantes',
         direccion: 'C. Cervantes 12, 41003',
-        distancia: '19 min from the hacienda',
+        distancia: '',
         telefono: '+34 954 90 02 80',
         reserva: 'https://www.hotel-cervantes.com',
       },
       {
         nombre: 'Eurostars Al-Ándalus Palace',
         direccion: 'Av de la Palmera s/n, 41012',
-        distancia: '21 min from the hacienda',
+        distancia: '',
         telefono: '+34 954 23 06 00',
         reserva: 'https://www.eurostarshotels.com/eurostars-al-andalus-palace.html',
       },
       {
         nombre: 'Hotel Ribera de Triana',
         direccion: 'Plaza de la Chapina 1, 41010',
-        distancia: '13 min from the hacienda',
+        distancia: '',
         telefono: '+34 900 80 88 22(ext 2)',
         reserva: 'https://hotelriberadetriana.com',
       },
       {
         nombre: 'Hotel Petit Palace Vargas',
         direccion: 'Plaza La Legión 7, 41001',
-        distancia: '12 min from the hacienda',
+        distancia: '',
         telefono: '+34 954 26 80 80',
         reserva: 'https://www.petitpalace.com',
       },
@@ -228,7 +228,7 @@ export const content_en = {
 
   // 9. Gifts
   regalo: {
-    heading: 'Gifts',
+    heading: 'Presents',
     parrafo:
       'Your presence is, without a doubt, the best gift. But if you would also like to contribute to our honeymoon, we promise to invest it responsibly in flights, hotels, and cocktails:',
     datos: {
@@ -254,15 +254,15 @@ export const content_en = {
       email: 'Email',
       emailPlaceholder: 'Invalid email',
       asistencia: 'Will you attend?',
-      siAsisto: 'Yes, I will be there',
-      noAsisto: 'I cannot attend',
+      siAsisto: 'Yes',
+      noAsisto: 'No',
       acompanantes: 'Number of companions',
       nombreAcompanante: 'Companion full name',
       nombreAcompanantePlaceholder: 'Full name',
       autobus: 'Bus: Will you need the bus service?',
       si: 'Yes',
       no: 'No',
-      restricciones: 'Dietary restrictions (Please indicate if you have any allergies, intolerances, or special dietary needs)',
+      restricciones: 'Food restrictions (Please indicate if you have any allergies, intolerances, or special food needs)',
       cancion: 'Must-play song (What is that song that you think must definitely play at our wedding?)',
       mensaje: 'Message (optional)',
       enviar: 'Confirm attendance',
@@ -279,24 +279,24 @@ export const content_en = {
     heading: 'Frequently Asked Questions',
     preguntas: [
       {
-        q: '¿What should I wear?',
-        a: 'Think wedding, not barbecue. Suit for them, smart dress for the ladies. Save the flip-flops for the honeymoon.',
+        q: 'What should I wear?',
+        a: 'Think in a wedding, not barbecue. Suit for them, smart dress for the ladies. Save the flip-flops for the honeymoon.',
       },
       {
-        q: '¿Is there parking?',
-        a: 'At the hacienda we have space for you to leave your car without a problem. If it is more comfortable for you, you can come in your own vehicle; if not, you also have the option to come by bus.',
+        q: 'Is there parking?',
+        a: 'In San Luis de Mejina we have space for you to leave your car without a problem. If it is more comfortable for you, you can come in your own vehicle; if not, you also have the option to come by bus.',
       },
       {
-        q: '¿Dietary restrictions?',
-        a: 'Please indicate any allergies, intolerances, or special dietary needs on the confirmation form and we will take them into account.',
+        q: 'Food restrictions?',
+        a: 'Please indicate any allergies, intolerances, or special food needs on the confirmation form and we will take them into account.',
       },
     ],
     contacto: {
       texto: 'If you have any questions, you can write to us at:',
-      email: 'Julieta.Julio.boda@gmail.com',
+      email: 'jcirerabenito@gmail.com',
       telefono: '+34 635 07 11 85',
     },
-    firma: 'We are thrilled to share this special day with you.',
+    firma: 'We are happy to share this special day with you.',
     firma2: 'Julieta & Julio',
   },
 };

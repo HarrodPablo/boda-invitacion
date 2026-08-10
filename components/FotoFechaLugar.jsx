@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useEffect, useState } from 'react';
 
 // Componente #2 — Foto enmarcada (passe-partout) + texto lateral (fecha / lugar).
 export default function FotoFechaLugar() {
@@ -30,9 +30,8 @@ export default function FotoFechaLugar() {
                   key={`${imgSrc}-${index}`}
                   src={imgSrc}
                   alt={imagenAlt}
-                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
-                    index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                  }`}
+                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                    }`}
                 />
               ))}
             </div>
@@ -42,10 +41,10 @@ export default function FotoFechaLugar() {
         {/* Texto centrado */}
         <div className="w-full text-center md:w-1/2">
           <div className="mb-4 flex flex-wrap items-baseline justify-center gap-3">
-            <p className="font-script text-5xl italic text-textoCalido sm:text-6xl">{fecha}</p>
+            <p className="font-script text-5xl italic text-textoCalido sm:text-6xl md:whitespace-nowrap">{fecha}</p>
             {conector && <span className="text-sm text-texto">{conector}</span>}
           </div>
-          <h2 className="font-display text-xl font-bold uppercase tracking-widest text-texto sm:text-2xl">
+          <h2 className="font-display text-xl uppercase tracking-widest text-texto sm:text-2xl">
             {lugar}
           </h2>
         </div>

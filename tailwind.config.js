@@ -25,6 +25,15 @@ module.exports = {
       letterSpacing: {
         widest2: '0.35em',
       },
+      keyframes: {
+        'progress-button': {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+      },
+      animation: {
+        'progress-button': 'progress-button 5s ease-out forwards',
+      },
     },
   },
   plugins: [],

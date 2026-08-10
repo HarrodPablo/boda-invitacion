@@ -233,9 +233,14 @@ export default function RSVPForm() {
             <button
               type="submit"
               disabled={status === 'loading'}
-              className="w-full bg-textoCalido py-3 text-xs uppercase tracking-widest text-fondo transition-opacity hover:opacity-90 disabled:opacity-50"
+              className="relative w-full overflow-hidden bg-textoCalido py-3 text-xs uppercase tracking-widest text-fondo transition-opacity hover:opacity-90 disabled:cursor-wait"
             >
-              {status === 'loading' ? form.enviando : form.enviar}
+              {status === 'loading' && (
+                <span className="absolute inset-y-0 left-0 bg-black/30 animate-progress-button" />
+              )}
+              <span className="relative z-10">
+                {status === 'loading' ? form.enviando : form.enviar}
+              </span>
             </button>
           </form>
         )}

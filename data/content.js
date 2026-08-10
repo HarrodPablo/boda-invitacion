@@ -21,7 +21,7 @@ export const content = {
     { id: 'traslados', label: 'Traslados' },
     { id: 'alojamiento', label: 'Alojamiento' },
     { id: 'guia', label: 'Sevilla' },
-    { id: 'regalo', label: 'Regalo' },
+    { id: 'regalo', label: 'Presente' },
     { id: 'rsvp', label: 'Confirmar' },
     { id: 'faq', label: 'FAQ' },
   ],
@@ -51,7 +51,16 @@ export const content = {
       'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390565/image0_uk6irs.jpg',
       'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390572/image2_jl1vda.jpg',
       'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390572/image5_ehmcgh.jpg',
-      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390726/image8_jxjfcz.jpg'
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390726/image8_jxjfcz.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786398306/image6_hc2buw.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786398307/image14_obnrha.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786398309/image9_fstjk4.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786398309/image7_l9w8xp.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786398311/image8_gennxd.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786398313/image10_snn90s.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786398315/image11_f5kbtd.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786398316/image13_joywu2.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786398306/image12_mb3mmh.jpg'
     ],
     imagenAlt: 'Pareja tomada de la mano durante el atardecer',
     fecha: '20 de Febrero de 2027',
@@ -136,7 +145,7 @@ export const content = {
 
   // 7. Alojamiento — componente #8 (cards), 5 hoteles
   alojamiento: {
-    heading: '¿Dónde hospedarse en Sevilla?',
+    heading: 'Donde hospedarse en Sevilla',
     subtitulo: 'Estas son algunas de nuestras recomendaciones de alojamiento en Sevilla. Si tienes cualquier pregunta o necesitas ayuda para elegir la mejor opción, no dudes en escribirnos. Estaremos encantados de ayudarte.',
     hoteles: [
       {
@@ -296,13 +305,13 @@ export const content = {
         a: 'En la hacienda disponemos de espacio para que puedas dejar tu coche sin problema. Si te resulta más cómodo, puedes venir en tu propio vehículo; sino, también tendrás la opción de venir en autobús.',
       },
       {
-        q: '¿Hay restricciones alimentarias?',
+        q: '¿Tienes restricciones alimentarias?',
         a: 'Indica tus restricciones en el formulario de confirmación y las tendremos en cuenta.',
       },
     ],
     contacto: {
       texto: 'Ante cualquier duda, podéis escribirnos al:',
-      email: 'Julieta.Julio.boda@gmail.com',
+      email: 'jcirerabenito@gmail.com',
       telefono: '+34 635 07 11 85',
     },
     firma: 'Nos hace muchísima ilusión compartir este día tan especial con vosotros.',

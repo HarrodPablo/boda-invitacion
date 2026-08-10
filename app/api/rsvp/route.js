@@ -79,7 +79,7 @@ export async function POST(request) {
       const fecha = new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid' });
       await sheets.spreadsheets.values.append({
         spreadsheetId: process.env.GOOGLE_SPREADSHEET_ID,
-        range: 'A:J', // Agrega a la primera hoja disponible
+        range: 'A:K', // Corregido para soportar los 11 datos
         valueInputOption: 'USER_ENTERED',
         requestBody: {
           values: [
@@ -100,7 +100,12 @@ export async function POST(request) {
         }
       });
     }
+  } catch (err) {
+    console.error('Error en Google Sheets:', err);
+  }
 
+  // 3) Email al invitado
+  try {
     await transporter.sendMail({
       from: `"Julieta & Julio" <${process.env.GMAIL_USER}>`,
       to: email,
@@ -108,8 +113,7 @@ export async function POST(request) {
       html: `<p>Hola ${nombre}, gracias por confirmar tu asistencia. ¡Nos hace mucha ilusión que seas parte de este día ❤✨!</p>`,
     });
   } catch (err) {
-    // Se loggea aparte pero no afecta el 200: no perdemos la confirmación por un error de terceros.
-    console.error('Error en servicios de terceros (Google Sheets o Email):', err);
+    console.error('Error enviando Email:', err);
   }
 
   return Response.json({ ok: true, rsvp });
