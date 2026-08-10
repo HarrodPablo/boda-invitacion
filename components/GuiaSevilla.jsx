@@ -26,7 +26,7 @@ export default function GuiaSevilla() {
                 alt={lugar.imagenAlt}
                 className="h-56 w-full sm:h-40 sm:w-32 flex-shrink-0 object-cover shadow-sm"
               />
-              <div>
+              <div className="flex flex-col justify-center text-center sm:text-left">
                 <p className="font-script text-xl italic text-textoCalido">{lugar.nombre}</p>
                 <p className="mt-1 text-sm leading-snug text-texto">{lugar.descripcion}</p>
               </div>

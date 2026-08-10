@@ -14,9 +14,9 @@ export default function ComoLlegar() {
     <section id="como-llegar" className="relative bg-fondo px-6 py-16 sm:py-20">
       <div className="mx-auto max-w-4xl">
         {/* Bloque intro tipo RSVP (componente #6) */}
-        <div className="bg-bloque px-6 py-10 sm:px-10">
+        <div className="bg-bloque px-6 py-10 text-center sm:px-10">
           <h2 className="font-script text-3xl italic text-textoCalido sm:text-4xl">{heading}</h2>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-textoCalido">{intro}</p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-textoCalido">{intro}</p>
         </div>
 
         {/* Grid 2 columnas: ceremonia vs. finca (componente #7) */}

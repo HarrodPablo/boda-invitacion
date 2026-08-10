@@ -19,9 +19,9 @@ export default function FotoFechaLugar() {
 
   return (
     <section id="fecha" className="bg-fondo px-6 py-16 sm:py-20">
-      <div className="mx-auto flex max-w-4xl flex-col items-center gap-10 md:flex-row md:items-center md:gap-16">
+      <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 md:flex-row md:items-center md:gap-12 lg:gap-16">
         {/* Foto con marco fino + passe-partout, alineada arriba (mobile) / izquierda (desktop) */}
-        <div className="w-full max-w-sm md:w-1/2">
+        <div className="w-full max-w-sm md:w-5/12">
           <div className="passepartout">
             <div className="relative aspect-[3/4] w-full overflow-hidden">
               {imagenes?.map((imgSrc, index) => (
@@ -39,9 +39,9 @@ export default function FotoFechaLugar() {
         </div>
 
         {/* Texto centrado */}
-        <div className="w-full text-center md:w-1/2">
+        <div className="w-full text-center md:w-7/12">
           <div className="mb-4 flex flex-wrap items-baseline justify-center gap-3">
-            <p className="font-script text-5xl italic text-textoCalido sm:text-6xl md:whitespace-nowrap">{fecha}</p>
+            <p className="font-script text-5xl italic text-textoCalido sm:text-6xl md:text-4xl lg:text-5xl xl:text-6xl md:whitespace-nowrap">{fecha}</p>
             {conector && <span className="text-sm text-texto">{conector}</span>}
           </div>
           <h2 className="font-display text-xl uppercase tracking-widest text-texto sm:text-2xl">

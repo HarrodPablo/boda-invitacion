@@ -19,7 +19,7 @@ export default function Alojamiento() {
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
           {hoteles.map((hotel, i) => (
-            <div key={i} className="flex flex-col bg-fondo p-6 shadow-sm">
+            <div key={i} className="flex flex-col items-center text-center bg-fondo p-6 shadow-sm">
               <p className="font-script text-2xl italic text-textoCalido">{hotel.nombre}</p>
               <p className="mt-2 text-sm text-texto">{hotel.direccion}</p>
               <p className="mt-1 text-xs uppercase tracking-widest text-textoCalido">
