@@ -101,6 +101,8 @@ export const content_en = {
   traslados: {
     heading: 'BUS TRANSFERS',
     subtitulo: '',
+    desde: 'From:',
+    hasta: 'To:',
     cards: [
       {
         titulo: 'Departure',

@@ -118,6 +118,8 @@ export const content = {
   traslados: {
     heading: 'TRASLADOS EN AUTOBÚS',
     subtitulo: '',
+    desde: 'Desde:',
+    hasta: 'Hasta:',
     cards: [
       {
         titulo: 'Salida',

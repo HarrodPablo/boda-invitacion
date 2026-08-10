@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/LanguageContext';
 // Componente #8 — Grid de cards sobre bloque de color (horarios de bus).
 export default function Traslados() {
   const { content } = useLanguage();
-  const { heading, subtitulo, cards } = content.traslados;
+  const { heading, subtitulo, cards, desde, hasta } = content.traslados;
 
   return (
     <section id="traslados" className="relative bg-bloque px-6 py-16 sm:py-20">
@@ -30,10 +30,10 @@ export default function Traslados() {
               <p className="font-script text-2xl italic text-textoCalido">{card.titulo}</p>
               <p className="mt-2 text-3xl font-bold tracking-widest text-texto">{card.hora}</p>
               <p className="mt-3 text-sm text-texto">
-                <span className="font-semibold">Desde:</span> {card.origen}
+                <span className="font-semibold">{desde}</span> {card.origen}
               </p>
               <p className="text-sm text-texto">
-                <span className="font-semibold">Hasta:</span> {card.destino}
+                <span className="font-semibold">{hasta}</span> {card.destino}
               </p>
               {card.nota && <p className="mt-3 text-xs text-textoCalido">{card.nota}</p>}
             </div>
