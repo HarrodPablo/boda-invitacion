@@ -1,32 +1,51 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 
 // Componente #2 — Foto enmarcada (passe-partout) + texto lateral (fecha / lugar).
 export default function FotoFechaLugar() {
   const { content } = useLanguage();
-  const { imagen, imagenAlt, fecha, conector, lugar } = content.fechaLugar;
+  const { imagenes, imagenAlt, fecha, conector, lugar } = content.fechaLugar;
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (!imagenes || imagenes.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % imagenes.length);
+    }, 4000); // Cambia cada 4 segundos
+    return () => clearInterval(interval);
+  }, [imagenes]);
 
   return (
     <section id="fecha" className="bg-fondo px-6 py-16 sm:py-20">
       <div className="mx-auto flex max-w-4xl flex-col items-center gap-10 md:flex-row md:items-center md:gap-16">
         {/* Foto con marco fino + passe-partout, alineada arriba (mobile) / izquierda (desktop) */}
-        <div className="w-full max-w-xs md:w-1/2">
+        <div className="w-full max-w-sm md:w-1/2">
           <div className="passepartout">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={imagen}
-              alt={imagenAlt}
-              className="aspect-[3/4] w-full object-cover"
-            />
+            <div className="relative aspect-[3/4] w-full overflow-hidden">
+              {imagenes?.map((imgSrc, index) => (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  key={`${imgSrc}-${index}`}
+                  src={imgSrc}
+                  alt={imagenAlt}
+                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
+                    index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Texto centrado */}
         <div className="w-full text-center md:w-1/2">
-          <p className="font-script text-3xl italic text-textoCalido sm:text-4xl">{fecha}</p>
-          <p className="my-3 text-sm text-texto">{conector}</p>
-          <h2 className="font-display text-2xl font-bold uppercase tracking-widest text-texto sm:text-3xl">
+          <div className="mb-4 flex flex-wrap items-baseline justify-center gap-3">
+            <p className="font-script text-5xl italic text-textoCalido sm:text-6xl">{fecha}</p>
+            {conector && <span className="text-sm text-texto">{conector}</span>}
+          </div>
+          <h2 className="font-display text-xl font-bold uppercase tracking-widest text-texto sm:text-2xl">
             {lugar}
           </h2>
         </div>

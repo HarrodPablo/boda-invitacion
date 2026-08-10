@@ -26,22 +26,30 @@ export const content_en = {
     conector: '&',
     nombre2: 'Julio',
     subtitulo: 'We are getting married!',
-    imagen: 'https://i.ibb.co/4wsGNsRt/Whats-App-Image-2026-07-04-at-20-19-38-2.jpg0',
+    imagen: 'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390188/portada_feebgq.jpg',
     imagenAlt: 'Julieta and Julio hugging by the water',
   },
 
   // 2. Photo + Date + Place
   fechaLugar: {
-    imagen: 'https://i.ibb.co/SX8jJGvc/Whats-App-Image-2026-07-04-at-20-19-38.jpg',
+    // Array de 5 imágenes para el carrusel (Reemplaza estos links de ejemplo con tus links de Cloudinary)
+    imagenes: [
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390563/image1_nfsims.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390564/image7_cuq92z.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390565/image0_uk6irs.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390572/image2_jl1vda.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390572/image5_ehmcgh.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390726/image8_jxjfcz.jpg'
+    ],
     imagenAlt: 'Couple holding hands during sunset',
     fecha: 'February 20th, 2027',
-    conector: 'in',
+    conector: '',
     lugar: 'SEVILLE - SPAIN',
   },
 
   // 3. Welcome
   bienvenida: {
-    imagen: 'https://i.ibb.co/4ZqXx9wb/Whats-App-Image-2026-07-04-at-20-19-38-1.jpg',
+    imagen: 'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390212/atras_nyd2ig.jpg',
     imagenAlt: 'Venue decorated for a wedding celebration',
     heading: 'Our big day',
     parrafo:
@@ -56,12 +64,12 @@ export const content_en = {
     heading: 'THE DAY',
     subtitulo: 'Our big day starts at 12:00, please be on time',
     hitos: [
-      { icono: 'anillos', hora: '12:00', label: 'Religious ceremony' },
-      { icono: 'mapa', hora: '14:00', label: 'Arrival at the hacienda' },
+      { icono: 'anillos', hora: '12:00', label: 'Religious Ceremony' },
+      { icono: 'mapa', hora: '14:00', label: 'Arrival at the Hacienda' },
       { icono: 'copa', hora: '14:15 - 16:00', label: 'Cocktail' },
       { icono: 'plato', hora: '16:15 - 17:45', label: 'Lunch' },
-      { icono: 'fiesta', hora: '18:00', label: 'Open bar' },
-      { icono: 'reloj', hora: '23:00', label: 'End of party' },
+      { icono: 'fiesta', hora: '18:00', label: 'Open Bar' },
+      { icono: 'reloj', hora: '23:00', label: 'End of Party' },
     ],
   },
 
@@ -91,7 +99,7 @@ export const content_en = {
       {
         titulo: 'Departure',
         hora: '13:30',
-        origen: 'Parroquia San Antonio Maria Claret',
+        origen: 'Parroquia San Antonio María Claret',
         destino: 'Hacienda San Luis de Mejina',
         nota: 'Punctual departure. Please arrive 10 minutes early.',
       },
@@ -99,14 +107,14 @@ export const content_en = {
         titulo: 'Return',
         hora: '21:30',
         origen: 'Hacienda San Luis de Mejina',
-        destino: 'Plaza de Toros de Seville',
+        destino: 'Plaza de Toros de la Real Maestranza de Caballería de Seville',
         nota: 'First return bus.',
       },
       {
         titulo: 'Return',
         hora: '23:00',
         origen: 'Hacienda San Luis de Mejina',
-        destino: 'Plaza de Toros de Seville',
+        destino: 'Plaza de Toros de la Real Maestranza de Caballería de Seville',
         nota: 'Last bus of the night.',
       },
     ],
@@ -114,7 +122,7 @@ export const content_en = {
 
   // 7. Accommodation
   alojamiento: {
-    heading: 'Where to stay in Seville',
+    heading: '¿Where to stay in Seville?',
     subtitulo: 'These are some of our accommodation recommendations in Seville. If you have any questions or need help choosing the best option, feel free to write to us. We will be happy to help you.',
     hoteles: [
       {
@@ -202,6 +210,13 @@ export const content_en = {
           'https://i.pinimg.com/736x/7d/3f/6b/7d3f6bf23a7eceabf39ae5637ac2658c.jpg',
         imagenAlt: 'Triana',
       },
+      {
+        nombre: 'Catedral de Sevilla',
+        descripcion: 'The Cathedral of Seville is the largest Gothic cathedral in the world and was built on the ancient mosque of the city. It stands out for its impressive Giralda, its enormous interior and for housing the tomb of Christopher Columbus.',
+        imagen:
+          'https://i.pinimg.com/736x/da/62/1c/da621cea64a0be28d5b79470ade4f382.jpg',
+        imagenAlt: 'Catedral de Sevilla',
+      },
     ],
   },
 
@@ -209,7 +224,7 @@ export const content_en = {
   regalo: {
     heading: 'Gifts',
     parrafo:
-      'For our future home we have a toaster, coffee maker, and even too many mate cups. If you would like to give us a gift, our honeymoon fund will appreciate it:',
+      'Your presence is, without a doubt, the best gift. But if you would also like to contribute to our honeymoon, we promise to invest it responsibly in flights, hotels, and cocktails:',
     datos: {
       titular: 'Julieta Llarrull & Julio Cirera Benito',
       iban: 'ES5615830001119150667751',
@@ -236,6 +251,8 @@ export const content_en = {
       siAsisto: 'Yes, I will be there',
       noAsisto: 'I cannot attend',
       acompanantes: 'Number of companions',
+      nombreAcompanante: 'Companion full name',
+      nombreAcompanantePlaceholder: 'Full name',
       autobus: 'Bus: Will you need the bus service?',
       si: 'Yes',
       no: 'No',
@@ -256,16 +273,16 @@ export const content_en = {
     heading: 'Frequently Asked Questions',
     preguntas: [
       {
-        q: 'DRESS CODE',
-        a: 'Formal',
+        q: '¿What should I wear?',
+        a: 'Think wedding, not barbecue. Suit for them, smart dress for the ladies. Save the flip-flops for the honeymoon.',
       },
       {
-        q: 'PARKING',
+        q: '¿Is there parking?',
         a: 'At the hacienda we have space for you to leave your car without a problem. If it is more comfortable for you, you can come in your own vehicle; if not, you also have the option to come by bus.',
       },
       {
-        q: 'ALLERGIES',
-        a: 'Indicate your restrictions on the confirmation form and we will take them into account.',
+        q: '¿Dietary restrictions?',
+        a: 'Please indicate any allergies, intolerances, or special dietary needs on the confirmation form and we will take them into account.',
       },
     ],
     contacto: {

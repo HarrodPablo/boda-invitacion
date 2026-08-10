@@ -33,24 +33,30 @@ export const content = {
     nombre2: 'Julio',
     subtitulo: '¡Nos casamos!',
     imagen:
-      'https://i.ibb.co/4wsGNsRt/Whats-App-Image-2026-07-04-at-20-19-38-2.jpg0',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390188/portada_feebgq.jpg',
     imagenAlt: 'Julieta y Julio abrazados junto al agua',
   },
 
-  // 2. Foto + Fecha + Lugar — componente #2
   fechaLugar: {
-    imagen:
-      'https://i.ibb.co/SX8jJGvc/Whats-App-Image-2026-07-04-at-20-19-38.jpg',
+    // Array de 5 imágenes para el carrusel (Reemplaza estos links de ejemplo con tus links de Cloudinary)
+    imagenes: [
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390563/image1_nfsims.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390564/image7_cuq92z.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390565/image0_uk6irs.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390572/image2_jl1vda.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390572/image5_ehmcgh.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390726/image8_jxjfcz.jpg'
+    ],
     imagenAlt: 'Pareja tomada de la mano durante el atardecer',
     fecha: '20 de Febrero de 2027',
-    conector: 'en',
+    conector: '',
     lugar: 'SEVILLA - ESPAÑA',
   },
 
   // 3. Bienvenida — componente #3 (full-bleed con overlay)
   bienvenida: {
     imagen:
-      'https://i.ibb.co/4ZqXx9wb/Whats-App-Image-2026-07-04-at-20-19-38-1.jpg',
+      'https://res.cloudinary.com/dgvwzbnez/image/upload/v1786390212/atras_nyd2ig.jpg',
     imagenAlt: 'Salón decorado para una celebración de boda',
     heading: 'Nuestro gran día',
     parrafo:
@@ -65,18 +71,18 @@ export const content = {
     heading: 'EL DÍA',
     subtitulo: 'Nuestro gran día comienza a las 12:00, no llegues más tarde',
     hitos: [
-      { icono: 'anillos', hora: '12:00', label: 'Ceremonia religiosa' },
-      { icono: 'mapa', hora: '14:00', label: 'Llegada a la hacienda' },
-      { icono: 'copa', hora: '14:15 - 16:00', label: 'Coctel' },
+      { icono: 'anillos', hora: '12:00', label: 'Ceremonia Religiosa' },
+      { icono: 'mapa', hora: '14:00', label: 'Llegada a la Hacienda ' },
+      { icono: 'copa', hora: '14:15 - 16:00', label: 'Cóctel' },
       { icono: 'plato', hora: '16:15 - 17:45', label: 'Almuerzo' },
       { icono: 'fiesta', hora: '18:00', label: 'Barra libre' },
-      { icono: 'reloj', hora: '23:00', label: 'Fin de la fiesta' },
+      { icono: 'reloj', hora: '23:00', label: 'Fin de fiesta' },
     ],
   },
 
   // 5. Ceremonia y finca — Cómo llegar — componente #6 + #7 + mapa
   comoLlegar: {
-    heading: 'Cómo llegar',
+    heading: '¿Cómo llegar?',
     intro:
       'La ceremonia religiosa y la celebración se realizarán en diferentes lugares. A continuación encontrarán las direcciones de cada uno, junto con un mapa para facilitar su llegada.',
     ceremonia: {
@@ -96,27 +102,27 @@ export const content = {
   // 6. Traslados en autobús — componente #8 (cards)
   traslados: {
     heading: 'TRASLADOS EN AUTOBÚS',
-    subtitulo: 'Servicio de bus gratuito para todos los invitados',
+    subtitulo: '',
     cards: [
       {
         titulo: 'Salida',
         hora: '13:30',
-        origen: 'Parroquia San Antonio Maria Claret',
+        origen: 'Parroquia San Antonio María Claret',
         destino: 'Hacienda San Luis de Mejina',
-        nota: 'Salida puntual. Presentate 10 minutos antes.',
+        nota: 'Salida puntual. Preséntate 10 minutos antes.',
       },
       {
         titulo: 'Regreso',
         hora: '21:30',
         origen: 'Hacienda San Luis de Mejina',
-        destino: 'Plaza de Toros de Sevilla',
+        destino: 'Plaza de Toros de la Real Maestranza de Caballería de Sevilla',
         nota: 'Primer bus de vuelta.',
       },
       {
         titulo: 'Regreso',
         hora: '23:00',
         origen: 'Hacienda San Luis de Mejina',
-        destino: 'Plaza de Toros de Sevilla',
+        destino: 'Plaza de Toros de la Real Maestranza de Caballería de Sevilla',
         nota: 'Último bus de la noche.',
       },
     ],
@@ -124,7 +130,7 @@ export const content = {
 
   // 7. Alojamiento — componente #8 (cards), 5 hoteles
   alojamiento: {
-    heading: 'Dónde hospedarse en Sevilla',
+    heading: '¿Dónde hospedarse en Sevilla?',
     subtitulo: 'Estas son algunas de nuestras recomendaciones de alojamiento en Sevilla. Si tienes cualquier pregunta o necesitas ayuda para elegir la mejor opción, no dudes en escribirnos. Estaremos encantados de ayudarte.',
     hoteles: [
       {
@@ -175,7 +181,7 @@ export const content = {
   // 8. Guía de Sevilla — componente #8 (cards con foto)
   guia: {
     heading: 'GUÍA DE SEVILLA',
-    subtitulo: 'Sitios que si o si tienes que visitar si estas en la ciudad',
+    subtitulo: 'Sitios que tienes que visitar si estás en Sevilla',
     lugares: [
       {
         nombre: 'Real Alcázar',
@@ -212,14 +218,21 @@ export const content = {
           'https://i.pinimg.com/736x/7d/3f/6b/7d3f6bf23a7eceabf39ae5637ac2658c.jpg',
         imagenAlt: 'Triana',
       },
+      {
+        nombre: 'Catedral de Sevilla',
+        descripcion: 'La Catedral de Sevilla es la mayor catedral gótica del mundo y fue construida sobre la antigua mezquita almohade de la ciudad. Destaca por su impresionante Giralda, su enorme interior y por albergar la tumba de Cristóbal Colón.',
+        imagen:
+          'https://i.pinimg.com/736x/da/62/1c/da621cea64a0be28d5b79470ade4f382.jpg',
+        imagenAlt: 'Catedral de Sevilla',
+      },
     ],
   },
 
   // 9. Regalo — componente #9 (caja con borde). Datos ocultos hasta el click.
   regalo: {
-    heading: 'Regalo',
+    heading: 'Presente',
     parrafo:
-      'Para nuestra futura casa tenemos tostadora, cafetera y hasta demasiados mates. Si queréis hacernos un regalo, nuestra hucha para la luna de miel os lo agradecerá:',
+      'Vuestra presencia es, sin duda, el mejor regalo. Pero si además queréis colaborar con nuestra luna de miel, prometemos invertirlo responsablemente en vuelos, hoteles y cócteles',
     // Estos datos NO se renderizan en el HTML inicial; solo aparecen tras "Ver datos".
     datos: {
       titular: 'Julieta Llarrull & Julio Cirera Benito',
@@ -243,11 +256,13 @@ export const content = {
       telefonoPlaceholder: 'Ingresa tu teléfono',
       email: 'Email',
       emailPlaceholder: 'Email inválido',
-      asistencia: '¿Asistís?',
-      siAsisto: 'Sí asisto',
-      noAsisto: 'No podré',
-      acompanantes: 'Cantidad de acompañantes',
-      autobus: 'Autobús: ¿Vas a necesitar el servicio del autobús?',
+      asistencia: '¿Asistiré a la boda?: ',
+      siAsisto: 'Sí',
+      noAsisto: 'No',
+      acompanantes: 'Número de acompañantes',
+      nombreAcompanante: 'Nombre completo del acompañante',
+      nombreAcompanantePlaceholder: 'Nombre completo',
+      autobus: '¿Vas a necesitar el servicio de autobús?',
       si: 'Sí',
       no: 'No',
       restricciones: 'Restricciones alimentarias (Por favor, indícanos si tienes alguna alergia, intolerancia o necesidad alimentaria especial)',
@@ -267,15 +282,15 @@ export const content = {
     heading: 'Preguntas frecuentes',
     preguntas: [
       {
-        q: 'CÓDIGO DE VESTIMENTA',
-        a: 'Formal',
+        q: '¿Qué me pongo?',
+        a: 'Piensa en una boda, no en una barbacoa. Traje para ellos y vestimenta elegante para ellas. Las chanclas las dejamos para la luna de miel.',
       },
       {
-        q: 'APARCAMIENTO',
+        q: '¿Hay aparcamiento?',
         a: 'En la hacienda disponemos de espacio para que puedas dejar tu coche sin problema. Si te resulta más cómodo, puedes venir en tu propio vehículo; sino, también tendrás la opción de venir en autobús.',
       },
       {
-        q: 'ALERGIAS',
+        q: '¿Hay restricciones alimentarias?',
         a: 'Indica tus restricciones en el formulario de confirmación y las tendremos en cuenta.',
       },
     ],

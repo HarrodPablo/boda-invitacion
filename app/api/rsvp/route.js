@@ -12,6 +12,7 @@ const schema = z.object({
   asiste: z.boolean(),
   autobus: z.boolean(),
   acompanantes: z.coerce.number().int().min(0).max(20).default(0),
+  nombresAcompanantes: z.string().optional(),
   restricciones: z.string().max(500).optional(),
   cancion: z.string().max(200).optional(),
   mensaje: z.string().max(1000).optional(),
@@ -43,15 +44,15 @@ export async function POST(request) {
     return Response.json({ ok: true });
   }
 
-  const { nombre, telefono, email, asiste, autobus, acompanantes, restricciones, cancion, mensaje } = body;
+  const { nombre, telefono, email, asiste, autobus, acompanantes, nombresAcompanantes, restricciones, cancion, mensaje } = body;
 
   // 1) Persistir (upsert por email: no duplica si el mismo email confirma de nuevo)
   let rsvp;
   try {
     rsvp = await prisma.rSVP.upsert({
       where: { email },
-      update: { nombre, telefono, asiste, autobus, acompanantes, restricciones, cancion, mensaje },
-      create: { nombre, telefono, email, asiste, autobus, acompanantes, restricciones, cancion, mensaje },
+      update: { nombre, telefono, asiste, autobus, acompanantes, nombresAcompanantes, restricciones, cancion, mensaje },
+      create: { nombre, telefono, email, asiste, autobus, acompanantes, nombresAcompanantes, restricciones, cancion, mensaje },
     });
   } catch (err) {
     console.error('Error guardando RSVP:', err);
@@ -90,6 +91,7 @@ export async function POST(request) {
               asiste ? 'Sí' : 'No',
               autobus ? 'Sí' : 'No',
               acompanantes,
+              nombresAcompanantes || '-',
               restricciones || '-',
               cancion || '-',
               mensaje || '-'
@@ -103,7 +105,7 @@ export async function POST(request) {
       from: `"Julieta & Julio" <${process.env.GMAIL_USER}>`,
       to: email,
       subject: '¡Recibimos tu confirmación!',
-      html: `<p>Hola ${nombre}, gracias por confirmar tu asistencia. ¡Nos vemos pronto!</p>`,
+      html: `<p>Hola ${nombre}, gracias por confirmar tu asistencia. ¡Te esperamos el 20 de febrero de 2027!</p>`,
     });
   } catch (err) {
     // Se loggea aparte pero no afecta el 200: no perdemos la confirmación por un error de terceros.

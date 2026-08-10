@@ -8,13 +8,13 @@ export default function Hero() {
   const { nombre1, conector, nombre2, subtitulo, imagen, imagenAlt } = content.hero;
 
   return (
-    <section id="inicio" className="relative h-[65vh] min-h-[520px] w-full overflow-hidden">
+    <section id="inicio" className="relative h-[65vh] min-h-[520px] w-full md:h-[85vh] overflow-hidden">
       {/* Foto full-bleed */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={imagen}
         alt={imagenAlt}
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-center md:object-[center_30%]"
       />
 
       {/* Overlay degradado: opaco abajo -> transparente arriba (tono de la paleta) */}
@@ -29,16 +29,16 @@ export default function Hero() {
 
       {/* Texto centrado superpuesto */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-fondo">
-        <h1 className="font-display text-5xl font-bold uppercase leading-none tracking-widest sm:text-6xl md:text-7xl">
+        <h1 className="font-bodoni text-5xl font-bold uppercase leading-none tracking-widest sm:text-6xl md:text-7xl">
           {nombre1}
         </h1>
-        <span className="-my-3 font-script text-4xl italic sm:text-5xl md:text-6xl">
+        <span className="my-4 font-bodoni text-4xl italic sm:text-5xl md:text-6xl">
           {conector}
         </span>
-        <h1 className="font-display text-5xl font-bold uppercase leading-none tracking-widest sm:text-6xl md:text-7xl">
+        <h1 className="font-bodoni text-5xl font-bold uppercase leading-none tracking-widest sm:text-6xl md:text-7xl">
           {nombre2}
         </h1>
-        <p className="mt-6 text-xs uppercase tracking-widest2 sm:text-sm">{subtitulo}</p>
+        <p className="mt-8 font-allura text-4xl tracking-wide sm:text-5xl">{subtitulo}</p>
       </div>
     </section>
   );

@@ -19,6 +19,8 @@ module.exports = {
         display: ['var(--font-playfair)', 'serif'],
         script: ['var(--font-cormorant)', 'serif'],
         body: ['var(--font-jost)', 'sans-serif'],
+        bodoni: ['var(--font-bodoni)', 'serif'],
+        allura: ['var(--font-allura)', 'cursive'],
       },
       letterSpacing: {
         widest2: '0.35em',

@@ -77,7 +77,7 @@ export default function Cronograma() {
               >
                 {iconos[hito.icono]}
               </svg>
-              <span className="text-xs lowercase tracking-wide text-texto">{hito.label}</span>
+              <span className="text-xs tracking-wide text-texto">{hito.label}</span>
             </li>
           ))}
         </ul>
