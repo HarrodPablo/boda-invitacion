@@ -23,6 +23,7 @@ export default function RSVPForm() {
     restricciones: z.string().max(500).optional(),
     cancion: z.string().max(200).optional(),
     mensaje: z.string().max(1000).optional(),
+    nombresAcompanantes: z.array(z.string().min(1, form.nombrePlaceholder || 'Obligatorio')).optional(),
     _gotcha: z.string().optional(), // honeypot
   });
 
@@ -30,14 +31,23 @@ export default function RSVPForm() {
     register,
     handleSubmit,
     reset,
+    watch,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(schema),
-    defaultValues: { asiste: 'si', autobus: 'no', acompanantes: 0, telefono: '', _gotcha: '' },
+    defaultValues: { asiste: 'si', autobus: 'no', acompanantes: 0, telefono: '', _gotcha: '', nombresAcompanantes: [] },
   });
+
+  const numAcompanantes = watch('acompanantes');
+  const acompanantesCount = parseInt(numAcompanantes) || 0;
 
   const onSubmit = async (values) => {
     setStatus('loading');
+    
+    // Extraemos solo los nombres de la cantidad indicada y los unimos por coma
+    const namesArray = values.nombresAcompanantes ? values.nombresAcompanantes.slice(0, acompanantesCount) : [];
+    const nombresAcompanantesStr = namesArray.length > 0 ? namesArray.join(', ') : undefined;
+
     try {
       const res = await fetch('/api/rsvp', {
         method: 'POST',
@@ -46,6 +56,7 @@ export default function RSVPForm() {
           ...values,
           asiste: values.asiste === 'si',
           autobus: values.autobus === 'si',
+          nombresAcompanantes: nombresAcompanantesStr,
         }),
       });
       if (!res.ok) throw new Error('Request failed');
@@ -66,9 +77,6 @@ export default function RSVPForm() {
       <div className="mx-auto max-w-xl">
         <h2 className="font-script text-3xl italic text-textoCalido sm:text-4xl">{heading}</h2>
         <p className="mt-4 text-sm leading-relaxed text-textoCalido">{intro}</p>
-        <p className="mt-2 text-xs uppercase tracking-widest text-textoCalido">
-          Fecha límite: {fechaLimite}
-        </p>
 
         {status === 'success' ? (
           <div className="mt-8 border border-textoCalido bg-fondo p-8 text-center">
@@ -145,6 +153,30 @@ export default function RSVPForm() {
                 <p className="mt-1 text-xs text-red-700">{errors.acompanantes.message}</p>
               )}
             </div>
+
+            {acompanantesCount > 0 && (
+              <div className="space-y-4 rounded-md border border-textoCalido/20 p-4">
+                {Array.from({ length: acompanantesCount }).map((_, index) => (
+                  <div key={`acomp-${index}`}>
+                    <label htmlFor={`nombresAcompanantes.${index}`} className={labelBase}>
+                      {form.nombreAcompanante} {index + 1}
+                    </label>
+                    <input
+                      id={`nombresAcompanantes.${index}`}
+                      type="text"
+                      className={inputBase}
+                      placeholder={form.nombreAcompanantePlaceholder}
+                      {...register(`nombresAcompanantes.${index}`)}
+                    />
+                    {errors.nombresAcompanantes?.[index] && (
+                      <p className="mt-1 text-xs text-red-700">
+                        {errors.nombresAcompanantes[index].message}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
 
             <div>
               <span className={labelBase}>{form.autobus}</span>

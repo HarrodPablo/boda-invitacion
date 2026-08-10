@@ -13,7 +13,7 @@ export default function Bienvenida() {
       <img
         src={imagen}
         alt={imagenAlt}
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-center md:object-[center_77%]"
       />
       {/* Overlay más opaco que el hero (bloque de contenido) */}
       <div

@@ -13,7 +13,8 @@ model RSVP {
   telefono      String?
   email         String   @unique
   asiste        Boolean
-  acompanantes  Int      @default(0)
+  acompanantes        Int      @default(0)
+  nombresAcompanantes String?
   autobus       Boolean  @default(false)
   restricciones String?
   cancion       String?

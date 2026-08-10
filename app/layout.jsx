@@ -1,4 +1,4 @@
-import { Playfair_Display, Cormorant_Garamond, Jost } from 'next/font/google';
+import { Playfair_Display, Cormorant_Garamond, Jost, Bodoni_Moda, Allura } from 'next/font/google';
 import { content } from '@/data/content';
 import { LanguageProvider } from '@/context/LanguageContext';
 import './globals.css';
@@ -25,6 +25,21 @@ const jost = Jost({
   display: 'swap',
 });
 
+const bodoni = Bodoni_Moda({
+  subsets: ['latin'],
+  weight: ['700'],
+  style: ['normal', 'italic'],
+  variable: '--font-bodoni',
+  display: 'swap',
+});
+
+const allura = Allura({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-allura',
+  display: 'swap',
+});
+
 export const metadata = {
   title: content.meta.titulo,
   description: content.meta.descripcion,
@@ -34,7 +49,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={`${playfair.variable} ${cormorant.variable} ${jost.variable}`}>
+    <html lang="es" className={`${playfair.variable} ${cormorant.variable} ${jost.variable} ${bodoni.variable} ${allura.variable}`}>
       <head>
         <meta name="robots" content="noindex, nofollow" />
       </head>
