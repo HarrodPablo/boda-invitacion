@@ -289,7 +289,7 @@ export const content = {
     preguntas: [
       {
         q: '¿Qué me pongo?',
-        a: 'Piensa en una boda, no en una barbacoa. Traje para ellos y vestimenta elegante para ellas. Las chanclas las dejamos para la luna de miel.',
+        a: 'Piensa en una boda, no en un asado. Traje para ellos y vestimenta elegante para ellas. Las chanclas las dejamos para la luna de miel.',
       },
       {
         q: '¿Hay aparcamiento?',
